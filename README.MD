@@ -8,3 +8,64 @@
 
 DMP的姿态融合的确牛逼，甚至翻转180度都可以很跟手。效果可以看一下 ![video](./效果.mp4)
 ![img](./效果.png)
+
+
+使用说明
+
+在main函数中初始化
+MPU6050模块的INT引脚接到你的单片机上，然后再中断回调函数中读取DMP的值，通过串口发送给上位机
+```cpp
+#include "MPU6050.h"
+
+int main(void)
+{
+...
+  MX_GPIO_Init();
+  MX_I2C1_Init();
+  MX_USART1_UART_Init();
+
+  DMP_Init();
+
+  while (1)
+  {
+      //led跑马灯
+	  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	  HAL_Delay(1000);
+  }
+}
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if(GPIO_Pin == GPIO_PIN_5)
+    {
+//    	printf("interrupt--\r\n");
+
+  	  float Pitch, Roll, Yaw;
+
+  	  uint8_t ret = Read_DMP(&Pitch, &Roll, &Yaw);
+
+//  	  printf("Read_DMP Return is %d \r\n", ret);
+//  	  printf("Pitch:%f, Roll:%f, Yaw:%f \r\n",Pitch, Roll, Yaw);
+
+  	  printf("%f,%f,%f\r\n", Pitch, Roll, Yaw);
+
+    }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if(GPIO_Pin == GPIO_PIN_5)
+    {
+//    	printf("interrupt--\r\n");
+
+  	  float Pitch, Roll, Yaw;
+
+  	  uint8_t ret = Read_DMP(&Pitch, &Roll, &Yaw);
+
+//  	  printf("Read_DMP Return is %d \r\n", ret);
+//  	  printf("Pitch:%f, Roll:%f, Yaw:%f \r\n",Pitch, Roll, Yaw);
+
+  	  printf("%f,%f,%f\r\n", Pitch, Roll, Yaw);
+
+    }
+}
+```
