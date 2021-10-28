@@ -40,6 +40,7 @@ int main(void)
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+    //这里需要你根据自己接的INT引脚来修改
     if(GPIO_Pin == GPIO_PIN_5)
     {
 //    	printf("interrupt--\r\n");
