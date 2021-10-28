@@ -1,1 +1,1 @@
-![img](./123.jpg)
+![img](https://github.com/G-Yong/STM32_MPU6050_DMP.git/master/123.jpg)
