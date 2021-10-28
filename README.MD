@@ -1,6 +1,6 @@
 简介
 ---
-本项目是将MPU6050的DMP5.1固件库移植到stm32。
+本项目是将MPU6050的[DMP5.1固件库](https://drivers.softpedia.com/get/Other-DRIVERS-TOOLS/Others/InvenSense-Embedded-Motion-Tracker-Driver-51.shtml)移植到stm32。
 
 所使用的IDE是stm32cubeIDE，挺好用的。虽然牺牲了一定的芯片性能，但是的确是将整个写代码（主要是配置各个库、寄存器之类的）的流程给优化了。
 
