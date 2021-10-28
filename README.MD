@@ -1,4 +1,2 @@
-![img](https://github.com/G-Yong/STM32_MPU6050_DMP/master/123.jpg)
-![img](123.jpg)
+###不要炒币了，跟着哥学写代码
 ![img](./123.jpg)
-![img](https://github.com/G-Yong/STM32_MPU6050_DMP/blob/master/123.jpg)
