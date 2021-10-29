@@ -62,4 +62,4 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 姿态角查看
 ---
 用unity3d做了个姿态角查看的软件，在MPU6050_3D文件夹中。下载之后，双击MPU6050_Demo.exe即可。
-![img](./3d软件.png)
+![img](https://raw.githubusercontent.com/G-Yong/STM32_MPU6050_DMP/master/3d%E8%BD%AF%E4%BB%B6.png)
